@@ -10,6 +10,13 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    @IBOutlet weak var loginRegisterSegmentedControl: UISegmentedControl! = {
+        let sc = UISegmentedControl(items: ["Login","Register"])
+        sc.translatesAutoresizingMaskIntoConstraints = false;
+        
+        return sc
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
