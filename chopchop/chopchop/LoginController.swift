@@ -17,9 +17,32 @@ class LoginController: UIViewController {
         return sc
     }()
     
+    @IBOutlet weak var submitButton: UIButton!
+    
+    @IBOutlet weak var inputContainerView: UIView! = {
+        let view = UIView()
+        
+        view.backgroundColor = UIColor.gray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor.white
+        
+        setupInputContainerView()
+        
+        view.addSubview(inputContainerView)
+    }
+    
+    func setupInputContainerView() {
+        inputContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        inputContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        inputContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        inputContainerView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

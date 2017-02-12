@@ -37,13 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpW-pC-KTJ">
-                                <rect key="frame" x="16" y="290" width="343" height="173"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="f1L-8W-xZT" kind="embed" id="snu-B9-UUI"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-ry-q5n">
                                 <rect key="frame" x="16" y="471" width="343" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,12 +55,21 @@
                                     <segment title="Register"/>
                                 </segments>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-cy-Hlj">
+                                <rect key="frame" x="67" y="302" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <segue destination="gjU-xY-hje" kind="embed" id="LIA-RA-eKo"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="J0b-Vq-xMZ"/>
                     <connections>
+                        <outlet property="inputContainerView" destination="Owh-cy-Hlj" id="m5c-lp-X0d"/>
                         <outlet property="loginRegisterSegmentedControl" destination="ThL-S3-76X" id="J9c-8u-DsS"/>
+                        <outlet property="submitButton" destination="fQ5-ry-q5n" id="OxF-LH-nqb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aym-LR-haU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,22 +153,18 @@
             <point key="canvasLocation" x="86" y="469"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="Eew-EY-m4y">
+        <scene sceneID="btO-g0-gI6">
             <objects>
-                <viewController id="f1L-8W-xZT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="k1J-L1-JQB"/>
-                        <viewControllerLayoutGuide type="bottom" id="LWf-2c-Otg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bNn-t5-TCH">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="173"/>
+                <viewController id="gjU-xY-hje" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZZE-HL-9ZH">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UlR-wv-STH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmg-SL-Rff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-756" y="1015"/>
+            <point key="canvasLocation" x="-77" y="-1"/>
         </scene>
     </scenes>
 </document>
