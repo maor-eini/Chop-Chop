@@ -14,6 +14,7 @@
 		EF9A8EDD1E41802100CEB49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EDC1E41802100CEB49A /* Assets.xcassets */; };
 		EF9A8EE01E41802100CEB49A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EDE1E41802100CEB49A /* LaunchScreen.storyboard */; };
 		EF9A8EE81E41811B00CEB49A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */; };
+		EFC810231E512978005DCAC0 /* LoginInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC810221E512978005DCAC0 /* LoginInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EF9A8EDF1E41802100CEB49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9A8EE11E41802100CEB49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFC810221E512978005DCAC0 /* LoginInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				EF9A8ED71E41802100CEB49A /* LoginController.swift */,
+				EFC810221E512978005DCAC0 /* LoginInputController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC810231E512978005DCAC0 /* LoginInputController.swift in Sources */,
 				EF9A8ED81E41802100CEB49A /* LoginController.swift in Sources */,
 				EF9A8ED61E41802100CEB49A /* AppDelegate.swift in Sources */,
 			);
