@@ -303,13 +303,6 @@
         <!--Login Input Controller-->
         <scene sceneID="I12-zI-ODk">
             <objects>
-                <viewController id="gjU-xY-hje" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vHl-7r-tzc"/>
-                        <viewControllerLayoutGuide type="bottom" id="nC3-Q8-9za"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZZE-HL-9ZH">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                 <viewController storyboardIdentifier="loginInputController" id="3Ui-ng-oY9" customClass="LoginInputController" customModule="chopchop" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="LoginInput" id="qWX-2P-ans">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="175"/>
