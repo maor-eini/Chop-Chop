@@ -11,6 +11,8 @@ import Firebase
 
 class ChopchopAuthService {
     
+    static var currentUser : User? = nil
+    
     static func registerUser(name: String, email: String, password: String, complition: @escaping (Bool) -> ()) {
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
@@ -26,6 +28,8 @@ class ChopchopAuthService {
                 return
             }
             
+            currentUser = User(userId: uid, name: name, email: email)
+            
             //succesfully authenticated user
             ChopchopDataService.sharedInstance.addUser(uid: uid, name: name, email: email) {
                 result in
@@ -39,7 +43,7 @@ class ChopchopAuthService {
         })
     }
     
-    static func signInUser(email: String, password: String, completion: @escaping (Bool) -> ()) {
+    static func signInUser(name: String, email: String, password: String, completion: @escaping (Bool) -> ()) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             
             if error != nil {
@@ -47,6 +51,10 @@ class ChopchopAuthService {
                 completion(false)
                 return
             }
+            
+            ChopchopDataService.sharedInstance.getUser(uid: (user?.uid)!, completion: { (_currentUser) in
+                currentUser = _currentUser
+            })
             
             //successfully logged in our user
             completion(true)

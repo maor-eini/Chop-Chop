@@ -11,11 +11,11 @@ import Firebase
 
 class HomeController: UITableViewController {
     
-    var names = [FeedItem]()
+    var feedItems = [FeedItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleFeed()
+        feedItems = ChopchopDataService.sharedInstance.getFeedItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +30,7 @@ class HomeController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return feedItems.count
     }
 
 
@@ -39,18 +39,22 @@ class HomeController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FeedTableViewCell else{
             fatalError("Error with cell type")
         }
-        print(names)
-        let feedItem = names[indexPath.row]
+        print(feedItems)
+        let feedItem = feedItems[indexPath.row]
         
-        cell.userNameLabel.text = feedItem.userName
+        cell.userNameLabel.text = feedItem.author
         cell.locationLabel.text = feedItem.location
+        
         cell.foodImage.image = feedItem.image
+        
         cell.likesCount.text = String(feedItem.likesCount)
         cell.isLikeClicked = feedItem.isLikeClicked
         
         if(cell.isLikeClicked == true){
             cell.likeButton.setImage(cell.likeImg, for: UIControlState.normal)
         }
+        
+        cell.feed = feedItem
         
         return cell
     }
@@ -108,8 +112,8 @@ class HomeController: UITableViewController {
         if let sourceViewController = sender.source as? UploadPhotoViewController ,let feed = sourceViewController.feed{
             
             //add new feed 
-            let newIndexPath = IndexPath(row: names.count, section: 0)
-            names.append(feed)
+            let newIndexPath = IndexPath(row: feedItems.count, section: 0)
+            feedItems.append(feed)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
 
@@ -120,7 +124,7 @@ class HomeController: UITableViewController {
     
     private func loadSampleFeed(){
         
-        
+        /*
         print("hello")
         
         let photo = UIImage(named: "default")
@@ -137,6 +141,8 @@ class HomeController: UITableViewController {
         }
         
         names += [item1 , item2 , item3]
+            */
     }
+ 
 
 }

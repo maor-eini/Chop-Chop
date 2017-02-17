@@ -92,7 +92,7 @@ class LoginController: UIViewController {
             return
         }
         
-        ChopchopAuthService.signInUser(email: email, password: password) { result in
+        ChopchopAuthService.signInUser(name: "", email: email, password: password) { result in
             if (result) {
                 print("SignIn Succeeded")
                 self.errorMessage.text = ""

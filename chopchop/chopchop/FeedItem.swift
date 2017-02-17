@@ -1,30 +1,32 @@
 //
-//  FeedItem.swift
+//  Post.swift
 //  chopchop
 //
-//  Created by Sapir Levy on 13/02/2017.
+//  Created by Maor Eini on 16/02/2017.
 //  Copyright © 2017 Maor Eini. All rights reserved.
 //
 
 import UIKit
 
 class FeedItem {
-    
-    //MARK: Properties
-    var userName: String
-    var image: UIImage?
+    var userId: String
+    var date: String
+    var author: String
+    var imageUrl: String
     var location: String
     var likesCount: Int
     var isLikeClicked: Bool
+    var image : UIImage
     
-    init?(name: String, image:UIImage?, location: String , likesCount: Int , isLikeClicked:Bool){
-        if(name.isEmpty || location.isEmpty){
-            return nil
-        }
-        self.userName = name
-        self.image = image
+    init(userId: String, author: String, date: String, imageUrl: String, location: String, likesCount: Int, isLikeClicked: Bool) {
+        self.userId = userId
+        self.date = date
+        self.author = author
+        self.imageUrl = imageUrl
         self.location = location
         self.likesCount = likesCount
         self.isLikeClicked = isLikeClicked
+        self.image = UIImage()
+        
     }
 }

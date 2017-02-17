@@ -89,7 +89,7 @@
                         <outlet property="inputContainerView" destination="q9J-2c-6Cj" id="4Bd-aC-vvR"/>
                         <outlet property="loginRegisterSegmentedControl" destination="h5m-Wk-TSL" id="vR2-4f-YeD"/>
                         <outlet property="submitButton" destination="fQ5-ry-q5n" id="OxF-LH-nqb"/>
-                        <segue destination="X8B-Ho-MmT" kind="show" identifier="TabBarSegue" id="Jkb-zc-fOg"/>
+                        <segue destination="X8B-Ho-MmT" kind="presentation" identifier="TabBarSegue" id="Jkb-zc-fOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aym-LR-haU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,6 +210,7 @@
                             <outlet property="delegate" destination="45L-iq-Y1e" id="qRg-Mp-vde"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Chop Chop" id="pnO-Fw-BZ8">
                         <barButtonItem key="rightBarButtonItem" image="cameraSymbol" id="IAH-F5-7LN">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -218,6 +219,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVS-Am-f1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,7 +266,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="kA2-1E-RHx">
                             <connections>
-                                <segue destination="sVE-9J-L8h" kind="unwind" unwindAction="unwindToFeedWithSender:" id="5iZ-tO-tnV"/>
+                                <segue destination="sVE-9J-L8h" kind="unwind" unwindAction="unwindToFeedWithSender:" id="T7R-l8-w01"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -302,7 +304,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ona-oV-v5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="469"/>
+            <point key="canvasLocation" x="130" y="481"/>
         </scene>
         <!--Login Input Controller-->
         <scene sceneID="I12-zI-ODk">

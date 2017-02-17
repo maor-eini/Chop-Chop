@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import os.log
 
 class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -49,9 +50,29 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
         
         let caption = captionTextField.text ?? ""
         let photo = photoImageView.image
-        feed = FeedItem(name: "Sapir", image: photo, location: caption, likesCount: 0, isLikeClicked: false)
+        
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        
+        let currentDateTime = Date()
+        
+        // initialize the date formatter and set the style
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        
+        // get the date time String from the date object
+        formatter.string(from: currentDateTime)
+        
+        self.feed = FeedItem(userId: uid, author: "Maor", date: formatter.string(from: currentDateTime), imageUrl: "", location: caption, likesCount: 0, isLikeClicked: false)
+        self.feed?.image = photo!
+        
+        ChopchopDataService.sharedInstance.uploadToFirebaseStorageUsingImage(photo!, feed: self.feed!, completion: {(url) in})
+
     }
- 
+    
+                                                   
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }

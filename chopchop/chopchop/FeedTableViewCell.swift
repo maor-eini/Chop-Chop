@@ -23,6 +23,7 @@ class FeedTableViewCell: UITableViewCell {
     var unlikeImg = UIImage(named: "emptyHeart")
     
     var isLikeClicked: Bool!
+    var feed: FeedItem!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,9 +46,11 @@ class FeedTableViewCell: UITableViewCell {
         
         if(isLikeClicked == true){
             likeButton.setImage(likeImg, for: UIControlState.normal)
+            likesCount.text = String(Int(likesCount.text!)! + 1)
         }
         else{
             likeButton.setImage(unlikeImg, for: UIControlState.normal)
+            likesCount.text = String(Int(likesCount.text!)! - 1)
         }
         
     }
