@@ -19,6 +19,10 @@
 		EF9A8EE01E41802100CEB49A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EDE1E41802100CEB49A /* LaunchScreen.storyboard */; };
 		EF9A8EE81E41811B00CEB49A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */; };
 		EFC810231E512978005DCAC0 /* LoginInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC810221E512978005DCAC0 /* LoginInputController.swift */; };
+		EFDB37E81E564BBE000FB61D /* ChopchopDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37E71E564BBE000FB61D /* ChopchopDataService.swift */; };
+		EFDB37EB1E564C2C000FB61D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EA1E564C2C000FB61D /* User.swift */; };
+		EFDB37ED1E564C62000FB61D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EC1E564C62000FB61D /* Post.swift */; };
+		EFDB37EF1E564FBA000FB61D /* ChopchopAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		EF9A8EE11E41802100CEB49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFC810221E512978005DCAC0 /* LoginInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInputController.swift; sourceTree = "<group>"; };
+		EFDB37E71E564BBE000FB61D /* ChopchopDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChopchopDataService.swift; sourceTree = "<group>"; };
+		EFDB37EA1E564C2C000FB61D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFDB37EC1E564C62000FB61D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChopchopAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,8 @@
 		EF9A8ED41E41802100CEB49A /* chopchop */ = {
 			isa = PBXGroup;
 			children = (
+				EFDB37F01E564FC8000FB61D /* Service */,
+				EFDB37E91E564C1E000FB61D /* Model */,
 				3B5882DD1E533FA8005ED5A5 /* Assets.xcassets */,
 				EFF700841E41856600409C85 /* Controller */,
 				EF9A8ED51E41802100CEB49A /* AppDelegate.swift */,
@@ -102,6 +112,24 @@
 			path = chopchop;
 			sourceTree = "<group>";
 		};
+		EFDB37E91E564C1E000FB61D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFDB37EA1E564C2C000FB61D /* User.swift */,
+				EFDB37EC1E564C62000FB61D /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EFDB37F01E564FC8000FB61D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EFDB37E71E564BBE000FB61D /* ChopchopDataService.swift */,
+				EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		EFF700841E41856600409C85 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +138,6 @@
 				3B5882D91E511A2F005ED5A5 /* FeedTableViewCell.swift */,
 				3B5882DF1E5363EB005ED5A5 /* UploadPhotoViewController.swift */,
 				EFC810221E512978005DCAC0 /* LoginInputController.swift */,
-
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -245,8 +272,12 @@
 				3B5882DA1E511A2F005ED5A5 /* FeedTableViewCell.swift in Sources */,
 				EF9A8ED61E41802100CEB49A /* AppDelegate.swift in Sources */,
 				3B5882DC1E5127D9005ED5A5 /* FeedItem.swift in Sources */,
+				EFDB37EF1E564FBA000FB61D /* ChopchopAuthService.swift in Sources */,
+				EFDB37EB1E564C2C000FB61D /* User.swift in Sources */,
 				3B5882E01E5363EB005ED5A5 /* UploadPhotoViewController.swift in Sources */,
 				3B5882D81E50F65E005ED5A5 /* HomeController.swift in Sources */,
+				EFDB37E81E564BBE000FB61D /* ChopchopDataService.swift in Sources */,
+				EFDB37ED1E564C62000FB61D /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

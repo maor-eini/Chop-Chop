@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeController: UITableViewController {
     
@@ -118,6 +119,8 @@ class HomeController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleFeed(){
+        
+        
         print("hello")
         
         let photo = UIImage(named: "default")

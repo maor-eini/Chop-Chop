@@ -18,6 +18,9 @@ class LoginController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
 
     @IBOutlet weak var inputContainerView: UIView!
+    
+    @IBOutlet weak var errorMessage: UITextField!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,9 @@ class LoginController: UIViewController {
         view.backgroundColor = UIColor.lightGray
         
         setupInputContainerView()
+        
+        loginInputViewController?.passwordTextField.isSecureTextEntry = true
+        self.errorMessage.isHidden = true
     }
     
     @IBAction func handleLoginRegisterChange(_ sender: Any) {
@@ -41,46 +47,66 @@ class LoginController: UIViewController {
         }
         
     }
+
     
     @IBAction func handleAuth(_ sender: Any) {
-        
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
+            handleLogin()
+        } else {
+            handleRegister()
+        }
+    }
+    
+    func handleRegister(){
+ 
         guard let email = loginInputViewController?.emailTextField.text,
             let password = loginInputViewController?.passwordTextField.text,
             let name = loginInputViewController?.nameTextField.text else {
-            print("Form Is Not Valid !")
+                print("Form Is Not Valid !")
+                errorMessage.text = "Form Is Not Valid !"
+                self.errorMessage.isHidden = false
+                return
+        }
+        
+        ChopchopAuthService.registerUser(name: name, email: email, password: password) {
+            result in
+            if result {
+                print("Registration Succeeded")
+                self.errorMessage.text = ""
+                self.errorMessage.isHidden = true
+                self.performSegue(withIdentifier: "TabBarSegue", sender: nil)
+            } else {
+                print("Registration Failed")
+                self.errorMessage.text = "Registration Failed"
+                self.errorMessage.isHidden = false
+            }
+        }
+    }
+    
+    
+    func handleLogin(){
+        
+        guard let email = loginInputViewController?.emailTextField.text, let password = loginInputViewController?.passwordTextField.text else {
+            errorMessage.text = "Form Is Not Valid !"
+            self.errorMessage.isHidden = false
             return
         }
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
-            
-            if error != nil {
-                print(error as Any)
-                return
+        ChopchopAuthService.signInUser(email: email, password: password) { result in
+            if (result) {
+                print("SignIn Succeeded")
+                self.errorMessage.text = ""
+                self.errorMessage.isHidden = true
+                self.performSegue(withIdentifier: "TabBarSegue", sender: nil)
             }
-            
-            guard let uid = user?.uid else {
-                return
+            else {
+                print("SignIn Failed")
+                self.errorMessage.text = "SignIn Failed"
+                self.errorMessage.isHidden = false
             }
-            
-            //succesfully authenticated user
-            let ref = FIRDatabase.database().reference(fromURL: "https://chopchop-8be92.firebaseio.com/")
-            let usersReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
-            usersReference.updateChildValues(values) { (err, ref) in
-                
-                if err != nil {
-                    print(err as Any)
-                    return
-                }
-                
-                print("User Saved")
-            }
-        })
+        }  
     }
     
-    func setupLoginRegisterSegmenetedControl() {
-        
-    }
     
     func setupInputContainerView() {
         loginInputViewController?.nameTextField.isEnabled = false
@@ -92,6 +118,7 @@ class LoginController: UIViewController {
             let linkContainerViewController = segue.destination as! LoginInputController
             loginInputViewController = linkContainerViewController
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
