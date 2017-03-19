@@ -7,15 +7,34 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class User {
-    var userId: String
+    var id: String
     var name: String
     var email: String
+    var lastUpdate:Date?
     
-    init(userId: String, name: String, email: String){
-        self.userId = userId
+    init(id: String, name: String, email: String){
+        self.id = id
         self.name = name
         self.email = email
+    }
+    
+    init(json:Dictionary<String,Any>){
+        id = json["id"] as! String
+        name = json["name"] as! String
+        if let lu = json["lastUpdate"] as? Double{
+            self.lastUpdate = Date.fromFirebase(lu)
+        }
+        email = json["email"] as! String
+    }
+    
+    func toFirebase() -> Dictionary<String,Any> {
+        var json = Dictionary<String,Any>()
+        json["id"] = id
+        json["name"] = name
+        json["lastUpdate"] = FIRServerValue.timestamp()
+        return json
     }
 }

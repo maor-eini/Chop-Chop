@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class ChopchopAuthService {
+class ChopchopAuthService2 {
     
     static var currentUser : User? = nil
     
@@ -28,18 +28,10 @@ class ChopchopAuthService {
                 return
             }
             
-            currentUser = User(userId: uid, name: name, email: email)
+            currentUser = User(id: uid, name: name, email: email)
             
             //succesfully authenticated user
-            ChopchopDataService.sharedInstance.addUser(uid: uid, name: name, email: email) {
-                result in
-                if result {
-                    complition(true)
-                } else {
-                    complition(false)
-                }
-            }
-            
+            Model.instance.addUser(u: currentUser!)
         })
     }
     
@@ -52,7 +44,7 @@ class ChopchopAuthService {
                 return
             }
             
-            ChopchopDataService.sharedInstance.getUser(uid: (user?.uid)!, completion: { (_currentUser) in
+            Model.instance.getUserById(id: (user?.uid)!, callback: { (_currentUser) in
                 currentUser = _currentUser
             })
             

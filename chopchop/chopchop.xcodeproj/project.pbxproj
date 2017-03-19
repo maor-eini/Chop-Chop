@@ -13,16 +13,23 @@
 		3B5882E01E5363EB005ED5A5 /* UploadPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5882DF1E5363EB005ED5A5 /* UploadPhotoViewController.swift */; };
 		BD1882215D7B71DD2C1A099A /* Pods_chopchop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2035F68FFE98486874BCE05C /* Pods_chopchop.framework */; };
 		EF5A1A861E56B35C00B32495 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A1A851E56B35C00B32495 /* Extensions.swift */; };
+		EF96032E1E7D957F004D3E83 /* LastUpdateTableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96032D1E7D957F004D3E83 /* LastUpdateTableService.swift */; };
+		EF9603301E7D9633004D3E83 /* User+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96032F1E7D9633004D3E83 /* User+sql.swift */; };
+		EF9603321E7D9D96004D3E83 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9603311E7D9D96004D3E83 /* libsqlite3.0.tbd */; };
 		EF9A8ED61E41802100CEB49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9A8ED51E41802100CEB49A /* AppDelegate.swift */; };
 		EF9A8ED81E41802100CEB49A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9A8ED71E41802100CEB49A /* LoginController.swift */; };
 		EF9A8EDB1E41802100CEB49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8ED91E41802100CEB49A /* Main.storyboard */; };
 		EF9A8EE01E41802100CEB49A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EDE1E41802100CEB49A /* LaunchScreen.storyboard */; };
 		EF9A8EE81E41811B00CEB49A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */; };
+		EFA2DCA31E7DA800004FDCBE /* ModelSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2DCA21E7DA800004FDCBE /* ModelSql.swift */; };
+		EFA2DCA91E7DB619004FDCBE /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2DCA81E7DB619004FDCBE /* ModelFirebase.swift */; };
+		EFA2DCAB1E7DB710004FDCBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2DCAA1E7DB710004FDCBE /* Model.swift */; };
+		EFA2DCAD1E7DC9FF004FDCBE /* Feed+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2DCAC1E7DC9FF004FDCBE /* Feed+sql.swift */; };
 		EFC810231E512978005DCAC0 /* LoginInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC810221E512978005DCAC0 /* LoginInputController.swift */; };
-		EFDB37E81E564BBE000FB61D /* ChopchopDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37E71E564BBE000FB61D /* ChopchopDataService.swift */; };
+		EFDB37E81E564BBE000FB61D /* ChopchopDataService.old.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37E71E564BBE000FB61D /* ChopchopDataService.old.swift */; };
 		EFDB37EB1E564C2C000FB61D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EA1E564C2C000FB61D /* User.swift */; };
 		EFDB37ED1E564C62000FB61D /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EC1E564C62000FB61D /* FeedItem.swift */; };
-		EFDB37EF1E564FBA000FB61D /* ChopchopAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.swift */; };
+		EFDB37EF1E564FBA000FB61D /* ChopchopAuthService.old.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.old.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,9 @@
 		3B5882DF1E5363EB005ED5A5 /* UploadPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoViewController.swift; sourceTree = "<group>"; };
 		92ECA3D15F03E68DAA1C7861 /* Pods-chopchop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chopchop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chopchop/Pods-chopchop.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5A1A851E56B35C00B32495 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EF96032D1E7D957F004D3E83 /* LastUpdateTableService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastUpdateTableService.swift; sourceTree = "<group>"; };
+		EF96032F1E7D9633004D3E83 /* User+sql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+sql.swift"; sourceTree = "<group>"; };
+		EF9603311E7D9D96004D3E83 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		EF9A8ED21E41802100CEB49A /* chopchop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chopchop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9A8ED51E41802100CEB49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF9A8ED71E41802100CEB49A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -41,11 +51,16 @@
 		EF9A8EDF1E41802100CEB49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9A8EE11E41802100CEB49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFA2DCA11E7D9FB0004FDCBE /* Chopchop-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Chopchop-Bridging-Header.h"; sourceTree = "<group>"; };
+		EFA2DCA21E7DA800004FDCBE /* ModelSql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSql.swift; sourceTree = "<group>"; };
+		EFA2DCA81E7DB619004FDCBE /* ModelFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		EFA2DCAA1E7DB710004FDCBE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EFA2DCAC1E7DC9FF004FDCBE /* Feed+sql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Feed+sql.swift"; sourceTree = "<group>"; };
 		EFC810221E512978005DCAC0 /* LoginInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInputController.swift; sourceTree = "<group>"; };
-		EFDB37E71E564BBE000FB61D /* ChopchopDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChopchopDataService.swift; sourceTree = "<group>"; };
+		EFDB37E71E564BBE000FB61D /* ChopchopDataService.old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChopchopDataService.old.swift; sourceTree = "<group>"; };
 		EFDB37EA1E564C2C000FB61D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EFDB37EC1E564C62000FB61D /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChopchopAuthService.swift; sourceTree = "<group>"; };
+		EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChopchopAuthService.old.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9603321E7D9D96004D3E83 /* libsqlite3.0.tbd in Frameworks */,
 				BD1882215D7B71DD2C1A099A /* Pods_chopchop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +88,7 @@
 		B39C068D452C824ECA2706DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF9603311E7D9D96004D3E83 /* libsqlite3.0.tbd */,
 				2035F68FFE98486874BCE05C /* Pods_chopchop.framework */,
 			);
 			name = Frameworks;
@@ -125,6 +142,7 @@
 				EF9A8EDE1E41802100CEB49A /* LaunchScreen.storyboard */,
 				EF9A8EE11E41802100CEB49A /* Info.plist */,
 				EF9A8EE71E41811B00CEB49A /* GoogleService-Info.plist */,
+				EFA2DCA11E7D9FB0004FDCBE /* Chopchop-Bridging-Header.h */,
 			);
 			path = chopchop;
 			sourceTree = "<group>";
@@ -134,6 +152,11 @@
 			children = (
 				EFDB37EA1E564C2C000FB61D /* User.swift */,
 				EFDB37EC1E564C62000FB61D /* FeedItem.swift */,
+				EF96032F1E7D9633004D3E83 /* User+sql.swift */,
+				EFA2DCA21E7DA800004FDCBE /* ModelSql.swift */,
+				EFA2DCA81E7DB619004FDCBE /* ModelFirebase.swift */,
+				EFA2DCAA1E7DB710004FDCBE /* Model.swift */,
+				EFA2DCAC1E7DC9FF004FDCBE /* Feed+sql.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -141,8 +164,9 @@
 		EFDB37F01E564FC8000FB61D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				EFDB37E71E564BBE000FB61D /* ChopchopDataService.swift */,
-				EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.swift */,
+				EFDB37E71E564BBE000FB61D /* ChopchopDataService.old.swift */,
+				EFDB37EE1E564FBA000FB61D /* ChopchopAuthService.old.swift */,
+				EF96032D1E7D957F004D3E83 /* LastUpdateTableService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -285,14 +309,20 @@
 			files = (
 				EFC810231E512978005DCAC0 /* LoginInputController.swift in Sources */,
 				EF9A8ED81E41802100CEB49A /* LoginController.swift in Sources */,
+				EFA2DCA31E7DA800004FDCBE /* ModelSql.swift in Sources */,
+				EFA2DCAD1E7DC9FF004FDCBE /* Feed+sql.swift in Sources */,
 				3B5882DA1E511A2F005ED5A5 /* FeedTableViewCell.swift in Sources */,
+				EF96032E1E7D957F004D3E83 /* LastUpdateTableService.swift in Sources */,
 				EF9A8ED61E41802100CEB49A /* AppDelegate.swift in Sources */,
-				EFDB37EF1E564FBA000FB61D /* ChopchopAuthService.swift in Sources */,
+				EF9603301E7D9633004D3E83 /* User+sql.swift in Sources */,
+				EFDB37EF1E564FBA000FB61D /* ChopchopAuthService.old.swift in Sources */,
 				EFDB37EB1E564C2C000FB61D /* User.swift in Sources */,
+				EFA2DCAB1E7DB710004FDCBE /* Model.swift in Sources */,
 				EF5A1A861E56B35C00B32495 /* Extensions.swift in Sources */,
+				EFA2DCA91E7DB619004FDCBE /* ModelFirebase.swift in Sources */,
 				3B5882E01E5363EB005ED5A5 /* UploadPhotoViewController.swift in Sources */,
 				3B5882D81E50F65E005ED5A5 /* HomeController.swift in Sources */,
-				EFDB37E81E564BBE000FB61D /* ChopchopDataService.swift in Sources */,
+				EFDB37E81E564BBE000FB61D /* ChopchopDataService.old.swift in Sources */,
 				EFDB37ED1E564C62000FB61D /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maoreini.chopchop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chopchop/Chopchop-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -436,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maoreini.chopchop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chopchop/Chopchop-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

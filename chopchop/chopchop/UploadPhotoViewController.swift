@@ -34,12 +34,7 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -49,7 +44,6 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
         }
         
         let caption = captionTextField.text ?? ""
-        let photo = photoImageView.image
         
         guard let uid = FIRAuth.auth()?.currentUser?.uid else {
             return
@@ -65,17 +59,23 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
         // get the date time String from the date object
         formatter.string(from: currentDateTime)
         
-        self.feed = FeedItem(userId: uid, author: "Maor", date: formatter.string(from: currentDateTime), imageUrl: "", location: caption, likesCount: 0, isLikeClicked: false)
-        self.feed?.image = photo!
-        
-        ChopchopDataService.sharedInstance.uploadToFirebaseStorageUsingImage(photo!, feed: self.feed!, completion: {(url) in})
-
+        if photoImageView.image != nil {
+            
+            Model.instance.saveImage(image: photoImageView.image!, name:self.captionText){(url) in
+                
+                let feed = FeedItem(id: "", userId: uid, author: (FIRAuth.auth()?.currentUser?.displayName)!, date: currentDateTime, imageUrl: url!, location: caption, likesCount: 0, isLikeClicked: false)
+                
+                Model.instance.addFeedItem(fi: feed)
+                
+                self.navigationController!.popViewController(animated: true)
+            }
+        }
     }
     
-                                                   
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+
     
     //MARK: UITextFieldDelegate
     
@@ -108,8 +108,9 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
             fatalError("Error with photo selected")
         }
         
-        photoImageView.image = selectedImage
+        self.photoImageView.image = selectedImage
         doneButton.isEnabled = true
         dismiss(animated: true, completion: nil)
     }
+
 }

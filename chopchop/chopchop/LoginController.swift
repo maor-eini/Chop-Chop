@@ -24,6 +24,7 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor.lightGray
         
@@ -68,7 +69,7 @@ class LoginController: UIViewController {
                 return
         }
         
-        ChopchopAuthService.registerUser(name: name, email: email, password: password) {
+        Model.instance.registerUser(name: name, email: email, password: password) {
             result in
             if result {
                 print("Registration Succeeded")
@@ -92,7 +93,7 @@ class LoginController: UIViewController {
             return
         }
         
-        ChopchopAuthService.signInUser(name: "", email: email, password: password) { result in
+        Model.instance.signInUser(name: "", email: email, password: password) { result in
             if (result) {
                 print("SignIn Succeeded")
                 self.errorMessage.text = ""

@@ -14,7 +14,7 @@
         <scene sceneID="KR0-hM-U8y">
             <objects>
                 <navigationController id="9JW-3g-pVe" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ir9-fD-vXx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ir9-fD-vXx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -147,7 +147,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nhj-zU-6uP" id="bt5-q6-hIN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Xuc-YG-p1t">
@@ -223,12 +223,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVS-Am-f1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064.8000000000002" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="1940" y="-285"/>
         </scene>
         <!--Upload Photo-->
         <scene sceneID="OPN-ji-Aay">
             <objects>
-                <viewController title="Upload Photo" id="Ly7-SK-Tjy" customClass="UploadPhotoViewController" customModule="chopchop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Upload Photo" id="Ly7-SK-Tjy" customClass="UploadPhotoViewController" customModule="chopchop" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="alq-qT-hXf"/>
                         <viewControllerLayoutGuide type="bottom" id="k5o-zP-ksq"/>
@@ -261,7 +261,7 @@
                     <navigationItem key="navigationItem" title="Upload Photo" id="ZV1-bO-t5l">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Tt3-Kf-SyQ">
                             <connections>
-                                <action selector="cancel:" destination="Ly7-SK-Tjy" id="x7s-bZ-B7n"/>
+                                <action selector="cancel:" destination="Ly7-SK-Tjy" id="6K0-Cb-w1e"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="kA2-1E-RHx">
@@ -281,11 +281,11 @@
                 <exit id="sVE-9J-L8h" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="rQy-dQ-cW6">
                     <connections>
-                        <action selector="selectImageFromLibrary:" destination="Ly7-SK-Tjy" id="wSP-2G-WO2"/>
+                        <action selector="selectImageFromLibrary:" destination="Ly7-SK-Tjy" id="THr-hY-Dv0"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3872.8000000000002" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="3551" y="-284"/>
         </scene>
         <!--Home-->
         <scene sceneID="OnQ-YB-POx">
@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndd-th-SJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="-62.518740629685162"/>
+            <point key="canvasLocation" x="129" y="-63"/>
         </scene>
         <!--Home-->
         <scene sceneID="mhQ-lz-69Q">
@@ -385,7 +385,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HoW-zl-Eu4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="homeResized" id="Y4n-eK-0Ig"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pYh-wz-tTz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pYh-wz-tTz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -396,14 +396,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7t-Zl-lyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125.5999999999999" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="1126" y="-284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kte-Y0-UwY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ace-oH-wfz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pfd-Pg-64p">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Pfd-Pg-64p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -414,7 +414,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vht-2h-OdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2933.5999999999999" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="2759" y="-284"/>
         </scene>
     </scenes>
     <resources>
