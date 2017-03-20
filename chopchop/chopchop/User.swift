@@ -34,6 +34,7 @@ class User {
         var json = Dictionary<String,Any>()
         json["id"] = id
         json["name"] = name
+        json["email"] = email
         json["lastUpdate"] = FIRServerValue.timestamp()
         return json
     }

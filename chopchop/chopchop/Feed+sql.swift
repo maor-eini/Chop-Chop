@@ -31,8 +31,8 @@ extension FeedItem{
     static let FEED_TABLE = "FEED"
     static let FEED_ID = "ID"
     static let FEED_USER_ID = "USER_ID"
-    static let FEED_DATE = "DATE"
     static let FEED_AUTHOR = "AUTHOR"
+    static let FEED_DATE = "DATE"
     static let FEED_IMAGE_URL = "IMAGE_URL"
     static let FEED_LOCATION = "FEED_LOCATION"
     static let FEED_LIKES_COUNT = "LIKES_COUNT"
@@ -85,8 +85,8 @@ extension FeedItem{
             
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 2, userId,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 4, author,-1,nil);
-            sqlite3_bind_double(sqlite3_stmt, 3, date);
+            sqlite3_bind_text(sqlite3_stmt, 3, author,-1,nil);
+            sqlite3_bind_double(sqlite3_stmt, 4, date);
             sqlite3_bind_text(sqlite3_stmt, 5, imageUrl,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 6, location,-1,nil);
             sqlite3_bind_int(sqlite3_stmt, 7, likesCount);
@@ -112,14 +112,14 @@ extension FeedItem{
         if (sqlite3_prepare_v2(database,"SELECT * from FEED;",-1,&sqlite3_stmt,nil) == SQLITE_OK){
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW) {
                 
-                let id =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,1))
-                let userId =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,2))
-                let author =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,3))
-                let date =  sqlite3_column_double(sqlite3_stmt,4)
-                let imageUrl =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,5))
-                let location =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,6))
-                let likesCount =  Int(sqlite3_column_int(sqlite3_stmt,7))
-                let isLikeClicked =  (Int(sqlite3_column_int(sqlite3_stmt,8)) == 1) ? true : false;
+                let id =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,0))
+                let userId =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,1))
+                let author =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,2))
+                let date =  sqlite3_column_double(sqlite3_stmt,3)
+                let imageUrl =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,4))
+                let location =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,5))
+                let likesCount =  Int(sqlite3_column_int(sqlite3_stmt,6))
+                let isLikeClicked =  (Int(sqlite3_column_int(sqlite3_stmt,7)) == 1) ? true : false;
                 
                 let feedItem = FeedItem(id: id!, userId: userId!, author: author!,date: Date(timeIntervalSince1970: date), imageUrl: imageUrl!, location: location!, likesCount: likesCount, isLikeClicked: isLikeClicked)
                 FeedItems.append(feedItem)

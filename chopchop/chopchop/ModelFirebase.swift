@@ -38,10 +38,7 @@ class ModelFirebase{
         })
     }
     
-    func signInUser(name: String, email: String, password: String, completionBlock: @escaping (User?) -> ()) {
-        
-        var userId : String? = nil
-        var signedInUser : User? = nil
+    func signInUser(name: String, email: String, password: String, completionBlock: @escaping (String?) -> ()) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             
@@ -51,12 +48,7 @@ class ModelFirebase{
                 return
             }
             
-            userId = user?.uid
-            
-            self.getUserById(id: (userId)!, callback: { (userRecord) in
-                signedInUser = userRecord
-                completionBlock(signedInUser)
-            })
+            completionBlock(user?.uid)
 
         })
     }
@@ -129,6 +121,7 @@ class ModelFirebase{
     func addFeedItem(fi:FeedItem, completionBlock:@escaping (Error?)->Void){
         let key = FIRDatabase.database().reference().child("feedItems").childByAutoId().key
         let ref = FIRDatabase.database().reference().child("feedItems").child(key)
+        fi.id = key
         ref.setValue(fi.toFirebase())
         ref.setValue(fi.toFirebase()){(error, dbref) in
             completionBlock(error)

@@ -57,13 +57,16 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
         
         if photoImageView.image != nil {
             
-            Model.instance.saveImage(image: photoImageView.image!, name:self.captionText){(url) in
+            Model.instance.saveImage(image: photoImageView.image!){(url) in
                 
-                let feed = FeedItem(id: "",userId: (Model.instance.currentUser?.id)!, author: (Model.instance.currentUser?.name)!, date: currentDateTime, imageUrl: url!, location: caption, likesCount: 0, isLikeClicked: false)
+                let userId = Model.instance.currentUser?.id
+                let userName = Model.instance.currentUser?.name
+                
+                let feed = FeedItem(id: "",userId: userId!, author: userName!, date: currentDateTime, imageUrl: url!, location: caption, likesCount: 0, isLikeClicked: false)
                 
                 Model.instance.addFeedItem(fi: feed)
                 
-                self.navigationController!.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

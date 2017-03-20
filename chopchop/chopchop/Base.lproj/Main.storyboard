@@ -14,7 +14,7 @@
         <scene sceneID="KR0-hM-U8y">
             <objects>
                 <navigationController id="9JW-3g-pVe" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ir9-fD-vXx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ir9-fD-vXx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -43,14 +43,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9J-2c-6Cj">
-                                <rect key="frame" x="16" y="108" width="343" height="175"/>
+                                <rect key="frame" x="65" y="310" width="244" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="3Ui-ng-oY9" kind="embed" identifier="registerSegue" id="aU0-jY-14s"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h5m-Wk-TSL">
-                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <rect key="frame" x="65" y="274" width="244" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Login"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-ry-q5n">
-                                <rect key="frame" x="16" y="583" width="343" height="64"/>
+                                <rect key="frame" x="65" y="480" width="244" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -147,7 +147,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nhj-zU-6uP" id="bt5-q6-hIN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Xuc-YG-p1t">
@@ -315,31 +315,31 @@
                         <viewControllerLayoutGuide type="bottom" id="5f5-Bt-dr7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="LoginInput" id="qWX-2P-ans">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="175"/>
+                        <rect key="frame" x="0.0" y="0.0" width="244" height="162"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9M8-yR-FaN">
-                                <rect key="frame" x="28" y="0.0" width="315" height="59"/>
+                                <rect key="frame" x="28" y="0.0" width="216" height="59"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aM-sV-xzg">
-                                <rect key="frame" x="0.0" y="116" width="343" height="1"/>
+                                <rect key="frame" x="0.0" y="116" width="244" height="0.0"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXv-DO-YCY">
-                                <rect key="frame" x="0.0" y="59" width="343" height="1"/>
+                                <rect key="frame" x="0.0" y="59" width="244" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXH-79-UQd">
-                                <rect key="frame" x="28" y="59" width="315" height="58"/>
+                                <rect key="frame" x="28" y="59" width="216" height="57"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXE-6l-yQI">
-                                <rect key="frame" x="28" y="116" width="315" height="60"/>
+                                <rect key="frame" x="28" y="116" width="216" height="47"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -385,7 +385,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HoW-zl-Eu4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="homeResized" id="Y4n-eK-0Ig"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pYh-wz-tTz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pYh-wz-tTz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -403,7 +403,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ace-oH-wfz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Pfd-Pg-64p">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pfd-Pg-64p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -419,7 +419,7 @@
     </scenes>
     <resources>
         <image name="UploadPhotoImage" width="64" height="64"/>
-        <image name="background" width="620" height="930"/>
+        <image name="background" width="375" height="667"/>
         <image name="cameraSymbol" width="35" height="35"/>
         <image name="default" width="1632" height="1224"/>
         <image name="emptyHeart" width="300" height="267"/>
