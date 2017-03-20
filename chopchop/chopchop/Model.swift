@@ -166,17 +166,16 @@ class Model{
         let lastUpdateDate = LastUpdateTableService.getLastUpdateDate(database: modelSql?.database, table: FeedItem.FEED_TABLE)
         
         // get all updated records from firebase
-        modelFirebase?.getAllFeedItems(lastUpdateDate, callback: { (users) in
+        modelFirebase?.getAllFeedItems(lastUpdateDate, callback: { (feedItems) in
             //update the local db
-            print("got \(users.count) new records from FB")
             var lastUpdate:Date?
-            for u in users{
-                u.addFeedItemToLocalDb(database: self.modelSql?.database)
+            for fi in feedItems{
+                fi.addFeedItemToLocalDb(database: self.modelSql?.database)
                 if lastUpdate == nil{
-                    lastUpdate = u.lastUpdate
+                    lastUpdate = fi.lastUpdate
                 }else{
-                    if lastUpdate!.compare(u.lastUpdate!) == ComparisonResult.orderedAscending{
-                        lastUpdate = u.lastUpdate
+                    if lastUpdate!.compare(fi.lastUpdate!) == ComparisonResult.orderedAscending{
+                        lastUpdate = fi.lastUpdate
                     }
                 }
             }
@@ -199,17 +198,16 @@ class Model{
         let lastUpdateDate = LastUpdateTableService.getLastUpdateDate(database: modelSql?.database, table: FeedItem.FEED_TABLE)
         
         // get all updated records from firebase
-        modelFirebase?.getAllFeedItemsAndObserve(lastUpdateDate, callback: { (users) in
+        modelFirebase?.getAllFeedItemsAndObserve(lastUpdateDate, callback: { (feedItems) in
             //update the local db
-            print("got \(users.count) new records from FB")
             var lastUpdate:Date?
-            for u in users{
-                u.addFeedItemToLocalDb(database: self.modelSql?.database)
+            for fi in feedItems{
+                fi.addFeedItemToLocalDb(database: self.modelSql?.database)
                 if lastUpdate == nil{
-                    lastUpdate = u.lastUpdate
+                    lastUpdate = fi.lastUpdate
                 }else{
-                    if lastUpdate!.compare(u.lastUpdate!) == ComparisonResult.orderedAscending{
-                        lastUpdate = u.lastUpdate
+                    if lastUpdate!.compare(fi.lastUpdate!) == ComparisonResult.orderedAscending{
+                        lastUpdate = fi.lastUpdate
                     }
                 }
             }
@@ -229,12 +227,14 @@ class Model{
     }
 
     
-    func saveImage(image:UIImage, name:String, callback:@escaping (String?)->Void){
+    func saveImage(image:UIImage, callback:@escaping (String?)->Void){
+        let imageName = UUID().uuidString + ".jpg"
+        
         //1. save image to Firebase
-        modelFirebase?.saveImageToFirebase(image: image, name: name, callback: {(url) in
+        modelFirebase?.saveImageToFirebase(image: image, name: imageName, callback: {(url) in
             if (url != nil){
                 //2. save image localy
-                self.saveImageToFile(image: image, name: name)
+                self.saveImageToFile(image: image, name: imageName)
             }
             //3. notify the user on complete
             callback(url)

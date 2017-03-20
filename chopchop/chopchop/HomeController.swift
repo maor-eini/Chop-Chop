@@ -45,6 +45,7 @@ class HomeController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cellIdentifier = "FeedTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FeedTableViewCell else{
@@ -75,16 +76,16 @@ class HomeController: UITableViewController {
     
     //MARK: Actions
     
-    @IBAction func unwindToFeed(sender: UIStoryboardSegue){
-        if let sourceViewController = sender.source as? UploadPhotoViewController ,let feed = sourceViewController.feed{
-            
-            //add new feed 
-            let newIndexPath = IndexPath(row: feedItems.count, section: 0)
-            feedItems.append(feed)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-        }
-
-    }
+//    @IBAction func unwindToFeed(sender: UIStoryboardSegue){
+//        if let sourceViewController = sender.source as? UploadPhotoViewController ,let feed = sourceViewController.feed{
+//            
+//            //add new feed 
+//            let newIndexPath = IndexPath(row: feedItems.count, section: 0)
+//            feedItems.append(feed)
+//            tableView.insertRows(at: [newIndexPath], with: .automatic)
+//        }
+//
+//    }
     
  
 

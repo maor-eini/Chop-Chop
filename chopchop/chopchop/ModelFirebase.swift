@@ -72,7 +72,7 @@ class ModelFirebase{
     func getUserById(id:String, callback:@escaping (User)->Void){
         let ref = FIRDatabase.database().reference().child("users").child(id)
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
-            let json = snapshot.value as? Dictionary<String,String>
+            let json = snapshot.value as? Dictionary<String,Any>
             let u = User(json: json!)
             callback(u)
         })
@@ -129,6 +129,7 @@ class ModelFirebase{
     func addFeedItem(fi:FeedItem, completionBlock:@escaping (Error?)->Void){
         let key = FIRDatabase.database().reference().child("feedItems").childByAutoId().key
         let ref = FIRDatabase.database().reference().child("feedItems").child(key)
+        fi.id = key
         ref.setValue(fi.toFirebase())
         ref.setValue(fi.toFirebase()){(error, dbref) in
             completionBlock(error)
@@ -138,7 +139,7 @@ class ModelFirebase{
     func getFeedItemById(id:String, callback:@escaping (FeedItem)->Void){
         let ref = FIRDatabase.database().reference().child("feedItems").child(id)
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
-            let json = snapshot.value as? Dictionary<String,String>
+            let json = snapshot.value as? Dictionary<String,Any>
             let fi = FeedItem(json: json!)
             callback(fi)
         })

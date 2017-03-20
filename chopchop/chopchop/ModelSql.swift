@@ -39,7 +39,11 @@ class ModelSql{
         if User.createTable(database: database) == false{
             return nil
         }
-        //TODO: Add FeedItem
+        
+        if FeedItem.createTable(database: database) == false{
+            return nil
+        }
+        
         if LastUpdateTableService.createTable(database: database) == false{
             return nil
         }

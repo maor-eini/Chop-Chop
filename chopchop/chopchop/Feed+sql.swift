@@ -31,8 +31,8 @@ extension FeedItem{
     static let FEED_TABLE = "FEED"
     static let FEED_ID = "ID"
     static let FEED_USER_ID = "USER_ID"
-    static let FEED_DATE = "DATE"
     static let FEED_AUTHOR = "AUTHOR"
+    static let FEED_DATE = "DATE"
     static let FEED_IMAGE_URL = "IMAGE_URL"
     static let FEED_LOCATION = "FEED_LOCATION"
     static let FEED_LIKES_COUNT = "LIKES_COUNT"
@@ -85,8 +85,8 @@ extension FeedItem{
             
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 2, userId,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 4, author,-1,nil);
-            sqlite3_bind_double(sqlite3_stmt, 3, date);
+            sqlite3_bind_text(sqlite3_stmt, 3, author,-1,nil);
+            sqlite3_bind_double(sqlite3_stmt, 4, date);
             sqlite3_bind_text(sqlite3_stmt, 5, imageUrl,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 6, location,-1,nil);
             sqlite3_bind_int(sqlite3_stmt, 7, likesCount);
