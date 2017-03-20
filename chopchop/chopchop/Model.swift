@@ -156,7 +156,7 @@ class Model{
     
     func addFeedItem(fi:FeedItem){
         modelFirebase?.addFeedItem(fi: fi){(error) in
-            //u.addFeedItemToLocalDb(database: self.modelSql?.database)
+            fi.addFeedItemToLocalDb(database: self.modelSql?.database)
         }
     }
     
