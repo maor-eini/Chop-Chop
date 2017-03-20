@@ -45,10 +45,6 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
         
         let caption = captionTextField.text ?? ""
         
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
-            return
-        }
-        
         let currentDateTime = Date()
         
         // initialize the date formatter and set the style
@@ -63,7 +59,7 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
             
             Model.instance.saveImage(image: photoImageView.image!, name:self.captionText){(url) in
                 
-                let feed = FeedItem(id: "", userId: uid, author: (FIRAuth.auth()?.currentUser?.displayName)!, date: currentDateTime, imageUrl: url!, location: caption, likesCount: 0, isLikeClicked: false)
+                let feed = FeedItem(id: "",userId: (Model.instance.currentUser?.id)!, author: (Model.instance.currentUser?.name)!, date: currentDateTime, imageUrl: url!, location: caption, likesCount: 0, isLikeClicked: false)
                 
                 Model.instance.addFeedItem(fi: feed)
                 
