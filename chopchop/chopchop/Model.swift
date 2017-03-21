@@ -80,7 +80,7 @@ class Model{
     
     func addUser(u:User){
         modelFirebase?.addUser(u: u){(error) in
-            //u.addUserToLocalDb(database: self.modelSql?.database)
+            u.addUserToLocalDb(database: self.modelSql?.database)
         }
     }
     
