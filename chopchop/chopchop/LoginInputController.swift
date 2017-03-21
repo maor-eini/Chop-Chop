@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginInputController: UIViewController {
+class LoginInputController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
 
@@ -20,7 +20,6 @@ class LoginInputController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 5
         view.layer.masksToBounds = true
     }
@@ -28,8 +27,22 @@ class LoginInputController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        self.nameTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func textFieldReturn(_ sender: UITextField) {
+        self.view.endEditing(true);
+    }
 
     /*
     // MARK: - Navigation

@@ -107,6 +107,7 @@ class UploadPhotoViewController: UIViewController , UITextFieldDelegate, UIImage
             fatalError("Error with photo selected")
         }
         
+        self.photoImageView.contentMode = .scaleAspectFit
         self.photoImageView.image = selectedImage
         doneButton.isEnabled = true
         dismiss(animated: true, completion: nil)

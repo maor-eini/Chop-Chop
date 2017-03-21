@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
 
     var loginInputViewController: LoginInputController?
     
@@ -30,7 +30,14 @@ class LoginController: UIViewController {
         
         setupInputContainerView()
         
+        loginInputViewController?.nameTextField.delegate = self
+        loginInputViewController?.emailTextField.delegate = self
+        loginInputViewController?.passwordTextField.delegate = self
+        
         loginInputViewController?.passwordTextField.isSecureTextEntry = true
+        
+        inputContainerView.frame.origin.y = inputContainerView.frame.origin.y - 50
+        
         self.errorMessage.isHidden = true
     }
     
@@ -38,17 +45,42 @@ class LoginController: UIViewController {
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
             submitButton.setTitle(title, for: .normal)
         if title == "Login" {
-            //loginInputViewController?.nameTextField.isHidden = true
             loginInputViewController?.nameTextField.isEnabled = false
+            loginInputViewController?.nameTextField.isHidden = true
             loginInputViewController?.nameTextField.placeholder = ""
+            
+            //View will slide 20px up
+            inputContainerView.frame.origin.y = inputContainerView.frame.origin.y - 50
+
         }
         else {
+            
+            //View will slide 20px up
+            inputContainerView.frame.origin.y = inputContainerView.frame.origin.y + 50
+            
             loginInputViewController?.nameTextField.isEnabled = true
+            
+            loginInputViewController?.nameTextField.isHidden = false
             loginInputViewController?.nameTextField.placeholder = "Name"
         }
         
     }
+    
+    //MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Hide the keyboard
+        textField.resignFirstResponder()
+        return true
+    }
 
+    @IBAction func endTextFieldEditing(_ sender: Any) {
+        self.view.resignFirstResponder()
+        self.loginInputViewController?.resignFirstResponder()
+        loginInputViewController?.nameTextField.resignFirstResponder()
+        loginInputViewController?.emailTextField.resignFirstResponder()
+        loginInputViewController?.passwordTextField.resignFirstResponder()
+    }
     
     @IBAction func handleAuth(_ sender: Any) {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
@@ -107,7 +139,6 @@ class LoginController: UIViewController {
             }
         }  
     }
-    
     
     func setupInputContainerView() {
         loginInputViewController?.nameTextField.isEnabled = false
